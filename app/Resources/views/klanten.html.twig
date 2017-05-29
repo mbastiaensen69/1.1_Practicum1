@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<h1>Overzicht Klanten</h1>
+
+	{% for klant in klanten %}
+	<div>
+	<span>
+		{{ klant.voornaam }} {{ klant.achternaam }} 
+		<a href="{{ path('wijzigenklant',{'klantnummer':klant.klantnummer}) }}">Update</a> 
+		<a href="{{ path('verwijderenklant',{'klantnummer':klant.klantnummer}) }}">Delete</a>
+	</span>
+	</div>
+	{% endfor %}
+
+{% endblock %}

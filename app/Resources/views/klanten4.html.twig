@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<h1>Overzicht Klanten</h1>
+
+	{% for klant in klanten %}
+	<div>
+	<span>
+		<a href="{{ path('KlantenOpVoornaam',{'voorNaam':klant.voorNaam}) }}">{{ klant.voornaam }} {{ klant.achternaam }} </a>
+	</span>
+	</div>
+	{% endfor %}
+
+{% endblock %}
